@@ -1,0 +1,882 @@
+{
+  "count": "1",
+  "encounter_type": "GE Individual Services",
+  "entity_id": "",
+  "relational_id": "",
+  "validate_on_submit": true,
+  "show_errors_on_submit": true,
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "step1": {
+    "title": "GE Individual Services",
+    "fields": [
+      {
+        "key": "GE_Service_Type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Select GE Service Type",
+        "options": [
+          {
+            "key": "Legal_Aid_Support",
+            "text": "Legal Aid Support",
+            "value": true
+          },
+          {
+            "key": "small_scale_entreprenuers",
+            "text": "Small Scale Entreprenuers Registration",
+            "value": true
+          },
+          {
+            "key": "Household_Sensitized_on_GE_Issues",
+            "text": "Household Sensitized on GE Issues",
+            "value": true
+          }
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "please select support"
+        }
+      },
+      {
+        "key": "date_of_support",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "Date of Support Provision",
+        "min_date": "today-2d",
+        "max_date": "today",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "user_first_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "First name",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the first name"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid name"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "user_middle_name",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Middle name",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the middle name"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid name"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "user_surname",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Surname",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the surname"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid name"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "DOB",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "Date of Birth",
+        "edit_type": "number",
+        "duration": {
+          "label": "Age"
+        },
+        "min_date": "today-5y",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter date of birth"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "Sex",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Please select gender",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "label_info_text": "You can select every thing you want.",
+        "label_info_title": "Gender selection",
+        "options": [
+          {
+            "key": "male",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "Male"
+          },
+          {
+            "key": "female",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "Female"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "Village",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Village name",
+        "edit_type": "name",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter the village name"
+        },
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "Please enter a valid village name"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "GBV_elements",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Are there elements of GBV in the case?",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "label_info_text": "You can select every thing you want.",
+        "label_info_title": "User selection",
+        "options": [
+          {
+            "key": "yes",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "Yes"
+          },
+          {
+            "key": "no",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "No"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "Legal_services",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Select Type of Legal services provided",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "Matrimonial issues",
+            "text": "Matrimonial issues",
+            "value": true
+          },
+          {
+            "key": "Probate issues",
+            "text": "Probate issues",
+            "value": true
+          },
+          {
+            "key": "Land issues",
+            "text": "Land issues",
+            "value": true
+          },
+          {
+            "key": "Economic issues",
+            "text": "Economic issues",
+            "value": true
+          },
+          {
+            "key": "Labor issues",
+            "text": "Labor issues",
+            "value": true
+          },
+          {
+            "key": "Criminal issues",
+            "text": "Criminal issues",
+            "value": true
+          },
+          {
+            "key": "Child maintanance issues",
+            "text": "Child maintanance issues",
+            "value": true
+          },
+          {
+            "key": "Custody of children issues",
+            "text": "Custody of children issues",
+            "value": true
+          },
+          {
+            "key": "General civil",
+            "text": "General civil",
+            "value": true
+          },
+          {
+            "key": "others_specify",
+            "text": "Others (specify)",
+            "value": true
+          }
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "please select legal services provided"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "other_options",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Other (specify)",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "Legal_services_provided",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "spinner",
+        "hint": "Action Taken After Provision of Legal Services",
+        "options": [
+          {
+            "key": "referral",
+            "text": "Referral",
+            "value": "referral",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "closed",
+            "text": "Closed",
+            "value": "Closed",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "ongoing",
+            "text": "Ongoing",
+            "value": "ongoing",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "Referral_destination",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "spinner",
+        "hint": "Select Referral selection",
+        "values": [
+          "Ward Land and Housing Tribunal",
+          "District Land and Housing Tribunal",
+          "Court",
+          "Police",
+          "Organization/Institution",
+          "Social-welfare",
+          "Others (Total)"
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "other_referrals",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Others answer to specify type of property owned",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "Property_ownership",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Does the client own property?",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "label_info_text": "You can select every thing you want.",
+        "label_info_title": "User selection",
+        "options": [
+          {
+            "key": "yes",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "Yes"
+          },
+          {
+            "key": "no",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "No"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "Type_of_property_owned",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "161641AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "check_box",
+        "label": "Select the type of property that the client owns?",
+        "label_text_style": "bold",
+        "label_text_color": "#000000",
+        "hint": "Select the type of property that the client owns?",
+        "options": [
+          {
+            "key": "Land",
+            "text": "Land",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "Housing",
+            "text": "Housing",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "Vehicles",
+            "text": "Vehicles",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "Livestock",
+            "text": "Livestock",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "others_specify",
+            "text": "Others(specify)",
+            "value": false,
+            "openmrs_choice_id": ""
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "other_property",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Others answer to specify type of property owned",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "gender_equality_sensitization",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "check_box",
+        "label": "Select Gender equality sensitization provided to a household",
+        "label_text_style": "bold",
+        "label_text_color": "#000000",
+        "hint": "Select Gender equality sensitization provided to a household",
+        "options": [
+          {
+            "key": "women_participation_in_leadership",
+            "text": "Women participation in Leadership and participation",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "women_economic_empowerment",
+            "text": "Women Economic Empowerment",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "women_safety_and_security",
+            "text": "Women Safety and Security",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "gender_issues_empowerment",
+            "text": "Gender Issues Empowerment",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "gender_and_good_leadership",
+            "text": "Gender and good leadership",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "norms_and_values",
+            "text": "Norms and Values",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "parenting_family_support_and_relationships",
+            "text": "Parenting Family Support and Relationships",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "others_specify",
+            "text": "Others(Specify)",
+            "value": false,
+            "openmrs_choice_id": ""
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "sensitization_options",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Other (specify)",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "sensitization_session",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Is the sensitization session complete?",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "label_info_text": "You can select every thing you want.",
+        "label_info_title": "User selection",
+        "options": [
+          {
+            "key": "yes",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "Yes"
+          },
+          {
+            "key": "no",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "No"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "followup_visit_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "Follow Up Visit date",
+        "edit_type": "number",
+        "min_date": "today-5y",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter registration date"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "registered_client",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "Has the client been registered?",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "label_info_text": "You can select every thing you want.",
+        "label_info_title": "User selection",
+        "options": [
+          {
+            "key": "yes",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "Yes"
+          },
+          {
+            "key": "no",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "text": "No"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "registration_area",
+        "openmrs_entity_parent": "usual_residence",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "geopoint",
+        "openmrs_data_type": "text",
+        "type": "edit_text",
+        "hint": "Enter registration area",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "registration_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "Registration Date",
+        "edit_type": "number",
+        "min_date": "today-5y",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "Please enter registration date"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "challenges_faced",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "161641AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "check_box",
+        "label": "Select challenges faced",
+        "label_text_style": "bold",
+        "label_text_color": "#000000",
+        "hint": "Select the type of property that the client owns?",
+        "options": [
+          {
+            "key": "not_being_recognized_by_authorities",
+            "text": "Not being recognized by authorities",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "missing_loans_opportunities",
+            "text": "Missing loans opportunites",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "lack_of_business_operating_freedom",
+            "text": "Lack of Business Operating Freedom",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "cannot_join_business_cooperatives",
+            "text": "Cannot join Business Cooperatives",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "missing_business_training",
+            "text": "Missing Business Training",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "others_specify",
+            "text": "Others (Specify)",
+            "value": false,
+            "openmrs_choice_id": ""
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "other_challenges",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "Others answer to specify type of property owned",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "client_counselling",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "161641AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "native_radio",
+        "label": "Did the client receive counselling?",
+        "label_text_style": "bold",
+        "label_text_color": "#000000",
+        "hint": "Did the client receive counselling?",
+        "options": [
+          {
+            "key": "yes",
+            "text": "Yes",
+            "value": false,
+            "openmrs_choice_id": ""
+          },
+          {
+            "key": "no",
+            "text": "No",
+            "value": false,
+            "openmrs_choice_id": ""
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "individual_ge_form.yml"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
