@@ -22,13 +22,15 @@ public interface Constants {
 
         String GE_FOLLOW_UP_VISIT = "GE Follow-up Visit";
 
-        String GE_MOBILIZATION = "GE Mobilization";
+        String GE_MOBILIZATION = "GE Mobilization Session";
 
         String DELETE_EVENT = "Delete Event";
     }
 
     interface FORMS {
         String GE_ENROLLMENT = "ge_enrollment";
+
+        String GE_INDIVIDUAL_SERVICES = "ge_individual_services";
 
         String GE_MOBILIZATION_SESSION = "ge_mobilization";
     }

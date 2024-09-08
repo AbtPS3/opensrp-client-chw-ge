@@ -135,7 +135,7 @@ public class BaseGeRegisterActivity extends BaseRegisterActivity implements GeRe
 
     @MenuRes
     public int getMenuResource() {
-        return R.menu.bottom_nav_sbc_menu;
+        return R.menu.bottom_nav_ge_menu;
     }
 
     @Override

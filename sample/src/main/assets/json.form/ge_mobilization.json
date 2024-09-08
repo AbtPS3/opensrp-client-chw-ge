@@ -54,7 +54,7 @@
     }
   },
   "step1": {
-    "title": "GE Mobilization Event Details",
+    "title": "GE Mobilization Session",
     "fields": [
       {
         "key": "event_start_date",
@@ -211,7 +211,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_participants",
         "openmrs_entity_parent": "",
@@ -244,7 +243,6 @@
           }
         }
       },
-
       {
         "key": "select_campaign_name",
         "openmrs_entity_parent": "",
@@ -276,10 +274,7 @@
             "text": "Others",
             "openmrs_entity": "",
             "openmrs_entity_id": ""
-
           }
-
-
         ],
         "v_required": {
           "value": "true",
@@ -300,7 +295,6 @@
         "openmrs_entity_id": "",
         "type": "edit_text",
         "hint": "Specify",
-
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -309,8 +303,6 @@
           }
         }
       },
-
-
       {
         "key": "number_of_male_participants_campaign",
         "openmrs_entity_parent": "",
@@ -343,8 +335,6 @@
           }
         }
       },
-
-
       {
         "key": "select_the_program_name",
         "openmrs_entity_parent": "",
@@ -388,7 +378,6 @@
           "value": "true",
           "err": "please select the gender"
         },
-
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -404,7 +393,6 @@
         "openmrs_entity_id": "",
         "type": "edit_text",
         "hint": "Specify",
-
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -413,7 +401,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_participants_program",
         "openmrs_entity_parent": "",
@@ -446,8 +433,6 @@
           }
         }
       },
-
-
       {
         "key": "ward_executive_officer_first_name",
         "openmrs_entity_parent": "",
@@ -493,7 +478,6 @@
           }
         }
       },
-
       {
         "key": "village",
         "openmrs_entity_parent": "",
@@ -555,7 +539,6 @@
           }
         }
       },
-
       {
         "key": "total_number_of_male_citizens_reached_by_the_campaign",
         "openmrs_entity_parent": "",
@@ -588,7 +571,6 @@
           }
         }
       },
-
       {
         "key": "total_number_of_cases_on_ownership_of_property_by_male_clients_received_after_the_campaign",
         "openmrs_entity_parent": "",
@@ -621,8 +603,6 @@
           }
         }
       },
-
-
       {
         "key": "total_number_of_referrals_cases_after_receiving_cases_on_ownership_of_property",
         "openmrs_entity_parent": "",
@@ -783,7 +763,6 @@
           }
         }
       },
-
       {
         "key": "total_number_of_male_citizens_who_own_land",
         "openmrs_entity_parent": "",
@@ -912,7 +891,6 @@
           }
         }
       },
-
       {
         "key": "reasons_for_differences_in_ratio_of_ownership_between_male_and_female",
         "openmrs_entity_parent": "",
@@ -945,7 +923,6 @@
             "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
-
           {
             "key": "others_reason",
             "text": "Others",
@@ -972,7 +949,6 @@
         "openmrs_entity_id": "",
         "type": "edit_text",
         "hint": "Specify",
-
         "relevance": {
           "rules-engine": {
             "ex-rules": {
@@ -981,7 +957,6 @@
           }
         }
       },
-
       {
         "key": "number_of_individual_loan_recepient",
         "openmrs_entity_parent": "",
@@ -990,7 +965,6 @@
         "type": "edit_text",
         "edit_type": "number",
         "hint": "Number of individual loan recepient",
-
         "v_required": {
           "value": "true",
           "err": "Please Enter the Loan Recepient"
@@ -1004,7 +978,6 @@
         }
       },
       {
-
         "key": "number_of_group_loan_recepient",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -1012,7 +985,6 @@
         "type": "edit_text",
         "edit_type": "number",
         "hint": "Number of group loan recepient",
-
         "v_required": {
           "value": "true",
           "err": "Please Enter the Loan Recepient"
@@ -1025,7 +997,6 @@
           }
         }
       },
-
       {
         "key": "registration_date",
         "openmrs_entity_parent": "",
@@ -1047,7 +1018,6 @@
           }
         }
       },
-
       {
         "key": "group_type",
         "openmrs_entity_parent": "",
@@ -1214,7 +1184,6 @@
             }
           }
         }
-
       },
       {
         "key": "has_the_group_individual_received_the_loan",
@@ -1501,7 +1470,6 @@
             "openmrs_entity": "",
             "openmrs_entity_id": ""
           },
-
           {
             "key": "cultural_resistance_to_women's_leadership",
             "text": "Cultural resistance to women's leadership",
@@ -1551,7 +1519,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_less_25_years_reached_by_the_campaign",
         "openmrs_entity_parent": "",
@@ -1584,7 +1551,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_25_plus_years_reached_by_the_campaign",
         "openmrs_entity_parent": "",
@@ -1617,7 +1583,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_less_25_years_screened_for_harmful_norms",
         "openmrs_entity_parent": "",
@@ -1650,7 +1615,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_25_plus_years_screened_for_harmful_norms",
         "openmrs_entity_parent": "",
@@ -1683,7 +1647,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_less_25_years_screened_positive",
         "openmrs_entity_parent": "",
@@ -1716,7 +1679,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_25_plus_years_screened_positive",
         "openmrs_entity_parent": "",
@@ -1749,7 +1711,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_less_25_years_who_received_services_based_on_issues_raised",
         "openmrs_entity_parent": "",
@@ -1782,7 +1743,6 @@
           }
         }
       },
-
       {
         "key": "number_of_male_25_plus_years_who_received_services_based_on_issues_raised",
         "openmrs_entity_parent": "",
@@ -1815,7 +1775,6 @@
           }
         }
       },
-
       {
         "key": "select_event_supporter",
         "openmrs_entity_parent": "",
@@ -1884,5 +1843,4 @@
       }
     ]
   }
-
 }

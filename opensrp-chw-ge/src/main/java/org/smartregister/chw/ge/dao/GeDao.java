@@ -77,14 +77,22 @@ public class GeDao extends AbstractDao {
     }
 
     public static void updateGeMobilization(GeMobilization geMobilization) {
-        String sql = String.format("INSERT INTO " + Constants.TABLES.GE_MOBILIZATION_SESSIONS + " (" + "id, " + "mobilization_date, " + "community_sbc_activity_provided, " + "other_interventions_iec_materials_distributed, " + "number_audio_visuals_distributed, " + "number_audio_distributed, " + "number_print_materials_distributed, " + "pmtct_iec_materials_distributed, " + "number_pmtct_audio_visuals_distributed_male, " + "number_pmtct_audio_visuals_distributed_female, " + "number_pmtct_audio_distributed_male, " + "number_pmtct_audio_distributed_female, " + "number_pmtct_print_materials_distributed_male, " + "number_pmtct_print_materials_distributed_female" + ") " + "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s') ON CONFLICT (id) DO UPDATE SET " + "mobilization_date = '%s', " + "community_sbc_activity_provided = '%s', " + "other_interventions_iec_materials_distributed = '%s', " + "number_audio_visuals_distributed = '%s', " + "number_audio_distributed = '%s', " + "number_print_materials_distributed = '%s', " + "pmtct_iec_materials_distributed = '%s', " + "number_pmtct_audio_visuals_distributed_male = '%s', " + "number_pmtct_audio_visuals_distributed_female = '%s', " + "number_pmtct_audio_distributed_male = '%s', " + "number_pmtct_audio_distributed_female = '%s', " + "number_pmtct_print_materials_distributed_male = '%s', " + "number_pmtct_print_materials_distributed_female = '%s' ", geMobilization.getBaseEntityID(), geMobilization.getMobilizationDate(), geMobilization.getCommunityGeActivityProvided() , geMobilization.getOtherInterventionsIecMaterialsDistributed(), geMobilization.getNumberAudioVisualsDistributed(), geMobilization.getNumberAudioDistributed(), geMobilization.getNumberPrintMaterialsDistributed(), geMobilization.getPmtctIecMaterialsDistributed(), geMobilization.getNumberPmtctAudioVisualsDistributedMale(), geMobilization.getNumberPmtctAudioVisualsDistributedFemale(), geMobilization.getNumberPmtctAudioDistributedMale(),
-                geMobilization.getNumberPmtctAudioDistributedFemale(), geMobilization.getNumberPmtctPrintMaterialsDistributedMale(),
-                geMobilization.getNumberPmtctPrintMaterialsDistributedFemale(),
-                geMobilization.getMobilizationDate(), geMobilization.getCommunityGeActivityProvided(),
-                geMobilization.getOtherInterventionsIecMaterialsDistributed(), geMobilization.getNumberAudioVisualsDistributed(),
-                geMobilization.getNumberAudioDistributed(), geMobilization.getNumberPrintMaterialsDistributed(), geMobilization.getPmtctIecMaterialsDistributed(), geMobilization.getNumberPmtctAudioVisualsDistributedMale(),
-                geMobilization.getNumberPmtctAudioVisualsDistributedFemale(), geMobilization.getNumberPmtctAudioDistributedMale(), geMobilization.getNumberPmtctAudioDistributedFemale(),
-                geMobilization.getNumberPmtctPrintMaterialsDistributedMale(), geMobilization.getNumberPmtctPrintMaterialsDistributedFemale());
+        String sql = String.format("INSERT INTO " + Constants.TABLES.GE_MOBILIZATION_SESSIONS +
+                        " (" + "id, " + "event_start_date, " + "event_end_date, " + "event_type, " + "event_supporter, " + "last_interacted_with" + ") " +
+                        "VALUES ('%s', '%s', '%s', '%s', '%s', '%s') ON CONFLICT (id) DO UPDATE SET " +
+                        "event_start_date = '%s', " + "event_end_date = '%s', " + "event_type = '%s', " + "event_supporter = '%s', " + "last_interacted_with = '%s' ",
+                geMobilization.getBaseEntityID(),
+                geMobilization.getEventStartDate(),
+                geMobilization.getEventEndDate(),
+                geMobilization.getMobilizationEventType(),
+                geMobilization.getEventSupporter(),
+                geMobilization.getLastInteractedWith(),
+                geMobilization.getEventStartDate(),
+                geMobilization.getEventEndDate(),
+                geMobilization.getMobilizationEventType(),
+                geMobilization.getEventSupporter(),
+                geMobilization.getLastInteractedWith()
+        );
         updateDB(sql);
     }
 
@@ -107,31 +115,15 @@ public class GeDao extends AbstractDao {
     public static class GeMobilization {
         private String baseEntityID;
 
-        private String mobilizationDate;
+        private String eventStartDate;
 
-        private String communityGeActivityProvided;
+        private String eventEndDate;
 
-        private String otherInterventionsIecMaterialsDistributed;
+        private String mobilizationEventType;
 
-        private String numberAudioVisualsDistributed;
+        private String eventSupporter;
 
-        private String numberAudioDistributed;
-
-        private String numberPrintMaterialsDistributed;
-
-        private String pmtctIecMaterialsDistributed;
-
-        private String numberPmtctAudioVisualsDistributedMale;
-
-        private String numberPmtctAudioVisualsDistributedFemale;
-
-        private String numberPmtctAudioDistributedMale;
-
-        private String numberPmtctAudioDistributedFemale;
-
-        private String numberPmtctPrintMaterialsDistributedMale;
-
-        private String numberPmtctPrintMaterialsDistributedFemale;
+        private Long lastInteractedWith;
 
         public String getBaseEntityID() {
             return baseEntityID;
@@ -141,108 +133,44 @@ public class GeDao extends AbstractDao {
             this.baseEntityID = baseEntityID;
         }
 
-        public String getMobilizationDate() {
-            return mobilizationDate;
+        public String getEventStartDate() {
+            return eventStartDate;
         }
 
-        public void setMobilizationDate(String mobilizationDate) {
-            this.mobilizationDate = mobilizationDate;
+        public void setEventStartDate(String eventStartDate) {
+            this.eventStartDate = eventStartDate;
         }
 
-        public String getCommunityGeActivityProvided() {
-            return communityGeActivityProvided;
+        public String getEventEndDate() {
+            return eventEndDate;
         }
 
-        public void setCommunityGeActivityProvided(String communityGeActivityProvided) {
-            this.communityGeActivityProvided = communityGeActivityProvided;
+        public void setEventEndDate(String eventEndDate) {
+            this.eventEndDate = eventEndDate;
         }
 
-        public String getOtherInterventionsIecMaterialsDistributed() {
-            return otherInterventionsIecMaterialsDistributed;
+        public String getMobilizationEventType() {
+            return mobilizationEventType;
         }
 
-        public void setOtherInterventionsIecMaterialsDistributed(String otherInterventionsIecMaterialsDistributed) {
-            this.otherInterventionsIecMaterialsDistributed = otherInterventionsIecMaterialsDistributed;
+        public void setMobilizationEventType(String mobilizationEventType) {
+            this.mobilizationEventType = mobilizationEventType;
         }
 
-        public String getNumberAudioVisualsDistributed() {
-            return numberAudioVisualsDistributed;
+        public String getEventSupporter() {
+            return eventSupporter;
         }
 
-        public void setNumberAudioVisualsDistributed(String numberAudioVisualsDistributed) {
-            this.numberAudioVisualsDistributed = numberAudioVisualsDistributed;
+        public void setEventSupporter(String eventSupporter) {
+            this.eventSupporter = eventSupporter;
         }
 
-        public String getNumberAudioDistributed() {
-            return numberAudioDistributed;
+        public Long getLastInteractedWith() {
+            return lastInteractedWith;
         }
 
-        public void setNumberAudioDistributed(String numberAudioDistributed) {
-            this.numberAudioDistributed = numberAudioDistributed;
-        }
-
-        public String getNumberPrintMaterialsDistributed() {
-            return numberPrintMaterialsDistributed;
-        }
-
-        public void setNumberPrintMaterialsDistributed(String numberPrintMaterialsDistributed) {
-            this.numberPrintMaterialsDistributed = numberPrintMaterialsDistributed;
-        }
-
-        public String getPmtctIecMaterialsDistributed() {
-            return pmtctIecMaterialsDistributed;
-        }
-
-        public void setPmtctIecMaterialsDistributed(String pmtctIecMaterialsDistributed) {
-            this.pmtctIecMaterialsDistributed = pmtctIecMaterialsDistributed;
-        }
-
-        public String getNumberPmtctAudioVisualsDistributedMale() {
-            return numberPmtctAudioVisualsDistributedMale;
-        }
-
-        public void setNumberPmtctAudioVisualsDistributedMale(String numberPmtctAudioVisualsDistributedMale) {
-            this.numberPmtctAudioVisualsDistributedMale = numberPmtctAudioVisualsDistributedMale;
-        }
-
-        public String getNumberPmtctAudioVisualsDistributedFemale() {
-            return numberPmtctAudioVisualsDistributedFemale;
-        }
-
-        public void setNumberPmtctAudioVisualsDistributedFemale(String numberPmtctAudioVisualsDistributedFemale) {
-            this.numberPmtctAudioVisualsDistributedFemale = numberPmtctAudioVisualsDistributedFemale;
-        }
-
-        public String getNumberPmtctAudioDistributedMale() {
-            return numberPmtctAudioDistributedMale;
-        }
-
-        public void setNumberPmtctAudioDistributedMale(String numberPmtctAudioDistributedMale) {
-            this.numberPmtctAudioDistributedMale = numberPmtctAudioDistributedMale;
-        }
-
-        public String getNumberPmtctAudioDistributedFemale() {
-            return numberPmtctAudioDistributedFemale;
-        }
-
-        public void setNumberPmtctAudioDistributedFemale(String numberPmtctAudioDistributedFemale) {
-            this.numberPmtctAudioDistributedFemale = numberPmtctAudioDistributedFemale;
-        }
-
-        public String getNumberPmtctPrintMaterialsDistributedMale() {
-            return numberPmtctPrintMaterialsDistributedMale;
-        }
-
-        public void setNumberPmtctPrintMaterialsDistributedMale(String numberPmtctPrintMaterialsDistributedMale) {
-            this.numberPmtctPrintMaterialsDistributedMale = numberPmtctPrintMaterialsDistributedMale;
-        }
-
-        public String getNumberPmtctPrintMaterialsDistributedFemale() {
-            return numberPmtctPrintMaterialsDistributedFemale;
-        }
-
-        public void setNumberPmtctPrintMaterialsDistributedFemale(String numberPmtctPrintMaterialsDistributedFemale) {
-            this.numberPmtctPrintMaterialsDistributedFemale = numberPmtctPrintMaterialsDistributedFemale;
+        public void setLastInteractedWith(Long lastInteractedWith) {
+            this.lastInteractedWith = lastInteractedWith;
         }
     }
 }

@@ -27,7 +27,12 @@ public class DBConstants {
         public static final String VISIT_NOT_DONE = "visit_not_done";
         public static final String FAMILY_NAME = "family_name";
         public static final String PHONE_NUMBER = "phone_number";
-        public static final String CHILD = "ec_child";
+
+
+        public static final String EVENT_START_DATE = "event_start_date";
+        public static final String EVENT_END_DATE = "event_end_date";
+        public static final String EVENT_TYPE = "event_type";
+        public static final String EVENT_SUPPORTER = "event_supporter";
 
     }
 }

@@ -71,7 +71,7 @@ public class BaseGeProfileActivity extends BaseProfileActivity implements GeProf
 
     @Override
     protected void onCreation() {
-        setContentView(R.layout.activity_sbc_profile);
+        setContentView(R.layout.activity_ge_profile);
         Toolbar toolbar = findViewById(R.id.collapsing_toolbar);
         setSupportActionBar(toolbar);
         String baseEntityId = getIntent().getStringExtra(Constants.ACTIVITY_PAYLOAD.BASE_ENTITY_ID);
@@ -228,5 +228,11 @@ public class BaseGeProfileActivity extends BaseProfileActivity implements GeProf
         if (requestCode == Constants.REQUEST_CODE_GET_JSON && resultCode == RESULT_OK) {
             profilePresenter.saveForm(data.getStringExtra(Constants.JSON_FORM_EXTRA.JSON));
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        profilePresenter.refreshProfileBottom();
     }
 }
