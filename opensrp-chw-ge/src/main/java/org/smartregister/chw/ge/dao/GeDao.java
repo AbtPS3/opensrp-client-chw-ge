@@ -21,7 +21,7 @@ public class GeDao extends AbstractDao {
     }
 
     public static boolean isRegisteredForGe(String baseEntityID) {
-        String sql = "SELECT count(p.base_entity_id) count FROM " + Constants.TABLES.GE_REGISTER + " p " + "WHERE p.base_entity_id = '" + baseEntityID + "' AND p.is_closed = 0";
+        String sql = "SELECT count(p.base_entity_id) count FROM " + Constants.TABLES.GE_REGISTER + " p " + "WHERE p.base_entity_id = '" + baseEntityID + "' AND p.is_closed = 0 AND p.consent_given = 'yes'  ";
 
         DataMap<Integer> dataMap = cursor -> getCursorIntValue(cursor, "count");
 
@@ -78,19 +78,42 @@ public class GeDao extends AbstractDao {
 
     public static void updateGeMobilization(GeMobilization geMobilization) {
         String sql = String.format("INSERT INTO " + Constants.TABLES.GE_MOBILIZATION_SESSIONS +
-                        " (" + "id, " + "event_start_date, " + "event_end_date, " + "event_type, " + "event_supporter, " + "last_interacted_with" + ") " +
-                        "VALUES ('%s', '%s', '%s', '%s', '%s', '%s') ON CONFLICT (id) DO UPDATE SET " +
-                        "event_start_date = '%s', " + "event_end_date = '%s', " + "event_type = '%s', " + "event_supporter = '%s', " + "last_interacted_with = '%s' ",
+                        " (" + "id, " +
+                        "event_start_date, " +
+                        "event_end_date, " +
+                        "event_type, " +
+                        "event_supporter, " +
+                        "number_of_male_members_loan, " +
+                        "number_of_female_members_loan, " +
+                        "total_number_of_male_citizens_reached_by_the_campaign, " +
+                        "total_number_of_female_citizens_reached_by_the_campaign, " +
+                        "last_interacted_with" + ") " +
+                        "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s') ON CONFLICT (id) DO UPDATE SET " +
+                        "event_start_date = '%s', " + "event_end_date = '%s', " + "event_type = '%s', " +
+                        "event_supporter = '%s', " +
+                        "number_of_male_members_loan = '%s', " +
+                        "number_of_female_members_loan = '%s', " +
+                        "total_number_of_male_citizens_reached_by_the_campaign = '%s', " +
+                        "total_number_of_female_citizens_reached_by_the_campaign = '%s', " +
+                        "last_interacted_with = '%s' ",
                 geMobilization.getBaseEntityID(),
                 geMobilization.getEventStartDate(),
                 geMobilization.getEventEndDate(),
                 geMobilization.getMobilizationEventType(),
                 geMobilization.getEventSupporter(),
+                geMobilization.getNumberOfMaleMembersLoan(),
+                geMobilization.getNumberOfFemaleMembersLoan(),
+                geMobilization.getTotalNumberOfMaleCitizensReachedByTheCampaign(),
+                geMobilization.getTotalNumberOfFemaleCitizensReachedByTheCampaign(),
                 geMobilization.getLastInteractedWith(),
                 geMobilization.getEventStartDate(),
                 geMobilization.getEventEndDate(),
                 geMobilization.getMobilizationEventType(),
                 geMobilization.getEventSupporter(),
+                geMobilization.getNumberOfMaleMembersLoan(),
+                geMobilization.getNumberOfFemaleMembersLoan(),
+                geMobilization.getTotalNumberOfMaleCitizensReachedByTheCampaign(),
+                geMobilization.getTotalNumberOfFemaleCitizensReachedByTheCampaign(),
                 geMobilization.getLastInteractedWith()
         );
         updateDB(sql);
@@ -122,6 +145,14 @@ public class GeDao extends AbstractDao {
         private String mobilizationEventType;
 
         private String eventSupporter;
+
+        private String numberOfMaleMembersLoan;
+
+        private String numberOfFemaleMembersLoan;
+
+        private String totalNumberOfMaleCitizensReachedByTheCampaign;
+
+        private String totalNumberOfFemaleCitizensReachedByTheCampaign;
 
         private Long lastInteractedWith;
 
@@ -171,6 +202,38 @@ public class GeDao extends AbstractDao {
 
         public void setLastInteractedWith(Long lastInteractedWith) {
             this.lastInteractedWith = lastInteractedWith;
+        }
+
+        public String getNumberOfMaleMembersLoan() {
+            return numberOfMaleMembersLoan;
+        }
+
+        public void setNumberOfMaleMembersLoan(String numberOfMaleMembersLoan) {
+            this.numberOfMaleMembersLoan = numberOfMaleMembersLoan;
+        }
+
+        public String getNumberOfFemaleMembersLoan() {
+            return numberOfFemaleMembersLoan;
+        }
+
+        public void setNumberOfFemaleMembersLoan(String numberOfFemaleMembersLoan) {
+            this.numberOfFemaleMembersLoan = numberOfFemaleMembersLoan;
+        }
+
+        public String getTotalNumberOfMaleCitizensReachedByTheCampaign() {
+            return totalNumberOfMaleCitizensReachedByTheCampaign;
+        }
+
+        public void setTotalNumberOfMaleCitizensReachedByTheCampaign(String totalNumberOfMaleCitizensReachedByTheCampaign) {
+            this.totalNumberOfMaleCitizensReachedByTheCampaign = totalNumberOfMaleCitizensReachedByTheCampaign;
+        }
+
+        public String getTotalNumberOfFemaleCitizensReachedByTheCampaign() {
+            return totalNumberOfFemaleCitizensReachedByTheCampaign;
+        }
+
+        public void setTotalNumberOfFemaleCitizensReachedByTheCampaign(String totalNumberOfFemaleCitizensReachedByTheCampaign) {
+            this.totalNumberOfFemaleCitizensReachedByTheCampaign = totalNumberOfFemaleCitizensReachedByTheCampaign;
         }
     }
 }

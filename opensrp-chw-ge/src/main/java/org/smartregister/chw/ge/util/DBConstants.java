@@ -34,5 +34,10 @@ public class DBConstants {
         public static final String EVENT_TYPE = "event_type";
         public static final String EVENT_SUPPORTER = "event_supporter";
 
+        public static final String NUMBER_OF_MALE_MEMBERS_WHO_RECEIVED_LOANS = "number_of_male_members_loan";
+        public static final String NUMBER_OF_FEMALE_MEMBERS_WHO_RECEIVED_LOANS = "number_of_female_members_loan";
+        public static final String TOTAL_NUMBER_OF_MALE_CITIZENS_REACHED_BY_THE_CAMPAIGN = "total_number_of_male_citizens_reached_by_the_campaign";
+        public static final String TOTAL_NUMBER_OF_FEMALE_CITIZENS_REACHED_BY_THE_CAMPAIGN = "total_number_of_female_citizens_reached_by_the_campaign";
+
     }
 }
