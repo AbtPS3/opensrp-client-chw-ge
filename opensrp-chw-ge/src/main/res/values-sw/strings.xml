@@ -47,4 +47,7 @@
     <string name="male">Me</string>
     <string name="female">Ke</string>
 
+    <string name="ge_enrollment">Usajili wa usawa wa kijinsia</string>
+    <string name="ge_mobilization">Kampeni za usawa wa kijinsia</string>
+
 </resources>
