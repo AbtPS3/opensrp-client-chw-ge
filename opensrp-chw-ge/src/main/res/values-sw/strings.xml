@@ -10,7 +10,7 @@
     <string name="job_aids">Vitendea kazi</string>
     <string name="saving_dialog_title">Kuhifadhi</string>
     <string name="malaria_followup_visit">Tembeleo la ufuatiliaji</string>
-    <string name="record_ge">Rekodi ufuatiliaji wa GE</string>
+    <string name="record_ge">Rekodi ufuatiliaji wa huduma za usawa wa kijinsia (GE)</string>
     <string name="return_to_previous_ge_clients_page">Rudi kwenye wateja wote wa malaria</string>
     <string name="last_visit_40_days_ago">Tembeleo la mwisho %1$s uliyopita</string>
     <string name="view_ge_followp_history">Angalia historia ya huduma</string>
